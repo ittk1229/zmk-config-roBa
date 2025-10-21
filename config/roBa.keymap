@@ -6,6 +6,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    tapping-term-ms = <175>;
 };
 
 &trackball {
@@ -26,52 +27,14 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-    };
-
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
+        esc_for_vimmer: esc_for_vimmer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp LANGUAGE_2>;
+            label = "ESC_FOR_VIMMER";
         };
     };
 
@@ -80,13 +43,13 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W               &kp KP_COMMA      &kp KP_DOT          &kp ESC                                        &kp M           &kp R               &kp D             &kp Y               &kp P
-&mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U               &kp LG(N0)      &none      &kp G           &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
-&kp Z           &kp X               &kp C             &kp V               &kp F               &sl 3           &none      &kp H           &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &kp TAB             &lt 2 INT_MUHENKAN  &kp SPACE       &kp ENTER  &lt 1 CAPSLOCK                                                            &kp DEL
+&kp Q           &kp W               &kp COMMA         &kp DOT             &esc_for_vimmer                              &kp M             &kp R               &kp D             &kp Y               &kp P
+&mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U             &kp LG(N0)      &none      &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
+&kp Z           &kp X               &kp C             &kp V               &kp F             &none           &none      &kp H             &kp J               &kp K             &kp L               &kp B
+&none           &none               &none             &lt 3 TAB           &lt 2 LANGUAGE_2  &kp SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                            &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp LG(PLUS) LG(MINUS)>;
         };
 
         RAISE {
