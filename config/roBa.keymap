@@ -15,7 +15,7 @@
 };
 
 &sensors {
-    triggers-per-rotation = <12>;
+    triggers-per-rotation = <3>;
 };
 
 / {
@@ -26,7 +26,7 @@
             label = "LT_FAST";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <100>;
+            tapping-term-ms = <125>;
             quick-tap-ms = <0>;
             bindings = <&mo>, <&kp>;
         };
@@ -62,7 +62,7 @@
 &kp Q           &kp W               &kp COMMA         &kp DOT             &esc_for_vimmer                              &kp M             &kp R               &kp D             &kp Y               &kp P
 &mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U             &kp LG(N0)      &none      &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
 &kp Z           &kp X               &kp C             &kp V               &kp F             &none           &none      &kp H             &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &lt 4 TAB           &lt_fast 2 LANGUAGE_2  &lt 5 SPACE       &kp ENTER  &lt_fast 1 LANGUAGE_1                                                            &kp DEL
+&none           &none               &none             &lt_fast 2 TAB      &lt 4 LANGUAGE_2  &lt 5 SPACE       &kp ENTER  &lt_fast 1 LANGUAGE_1                                                            &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
