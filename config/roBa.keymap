@@ -10,21 +10,36 @@
 };
 
 &trackball {
-    automouse-layer = <3>;
+    automouse-layer = <4>;
     scroll-layers = <4>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
 };
+
+/* ───────── RAISE/LOWER専用の高速 layer-tap ───────── */
+ / {
+    behaviors {
+        lt_fast: lt_fast {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_FAST";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+}
+
+/* ───────── tri-layer (RAISE+LOWER → ADJUST) ───────── */
+ / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        raise_lower_to_adjust {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+}
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -41,17 +56,19 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* ───────── Layer 0: DEFAULT ───────── */
         default_layer {
             bindings = <
 &kp Q           &kp W               &kp COMMA         &kp DOT             &esc_for_vimmer                              &kp M             &kp R               &kp D             &kp Y               &kp P
 &mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U             &kp LG(N0)      &none      &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
 &kp Z           &kp X               &kp C             &kp V               &kp F             &none           &none      &kp H             &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &lt 4 TAB           &lt 2 LANGUAGE_2  &kp SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                            &kp DEL
+&none           &none               &none             &lt 5 TAB           &lt_fast 2 LANGUAGE_2  &kp SPACE       &kp ENTER  &lt_fast 1 LANGUAGE_1                                                            &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(PLUS) LG(MINUS)>;
         };
 
+        /* ───────── Layer 1: RAISE ───────── */
         RAISE {
             bindings = <
 &kp GRAVE    &kp SINGLE_QUOTE  &kp LT     &kp GT       &kp COLON                              &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH  &kp TILDE
@@ -61,6 +78,7 @@
             >;
         };
 
+        /* ───────── Layer 2: LOWER ───────── */
         LOWER {
             bindings = <
 &trans        &trans        &trans        &trans        &trans                             &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
@@ -70,6 +88,17 @@
             >;
         };
 
+        /* ───────── Layer 3: ADJUST (Fn1–12) ───────── */
+        ADJUST {
+            bindings = <
+&trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans    &trans    &trans
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5  &trans      &trans    &kp F6   &kp F7   &kp F8    &kp F9    &kp F10
+&kp F11  &kp F12  &trans   &trans   &trans  &trans      &trans    &trans   &trans   &trans    &trans    &trans
+&trans   &trans   &trans   &trans   &trans  &trans      &trans    &trans                                &trans
+            >;
+        };
+
+        /* ───────── Layer 4: MOUSE ───────── */
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
@@ -79,6 +108,7 @@
             >;
         };
 
+        /* ───────── Layer 5: BLUETOOTH ───────── */
         BLUETOOTH {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
