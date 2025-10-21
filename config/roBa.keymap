@@ -10,8 +10,8 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
+    automouse-layer = <3>;
+    scroll-layers = <4>;
 
     // arrows {
     //     layers = <3>;
@@ -46,7 +46,7 @@
 &kp Q           &kp W               &kp COMMA         &kp DOT             &esc_for_vimmer                              &kp M             &kp R               &kp D             &kp Y               &kp P
 &mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U             &kp LG(N0)      &none      &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
 &kp Z           &kp X               &kp C             &kp V               &kp F             &none           &none      &kp H             &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &lt 3 TAB           &lt 2 LANGUAGE_2  &kp SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                            &kp DEL
+&none           &none               &none             &lt 4 TAB           &lt 2 LANGUAGE_2  &kp SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                            &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(PLUS) LG(MINUS)>;
