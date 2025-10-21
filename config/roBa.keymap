@@ -22,17 +22,21 @@
     /* ───────── tri-layer (RAISE+LOWER → ADJUST) ───────── */
     behaviors {
         raise: raise {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <1>;
-            bindings = <&kp LANGUAGE_1>, <&mo 1>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&kp>;
         };
-    };
 
-    behaviors {
         lower: lower {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <1>;
-            bindings = <&kp LANGUAGE_2>, <&mo 2>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -62,7 +66,7 @@
 &kp Q           &kp W               &kp COMMA         &kp DOT             &esc_for_vimmer                              &kp M             &kp R               &kp D             &kp Y               &kp P
 &mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U             &kp LG(N0)      &none      &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
 &kp Z           &kp X               &kp C             &kp V               &kp F             &none           &none      &kp H             &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &lower              &lt 4 TAB         &lt 5 SPACE     &kp ENTER  &raise                                                                      &kp DEL
+&none           &none               &none             &lower 2 LANGUAGE_2 &lt 4 TAB         &lt 5 SPACE     &kp ENTER  &raise 1 LANGUAGE_1                                                         &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
