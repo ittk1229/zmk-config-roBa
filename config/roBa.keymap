@@ -14,6 +14,10 @@
     scroll-layers = <5>;
 };
 
+&sensors {
+    triggers-per-rotation = <12>;
+};
+
 / {
     /* ───────── RAISE/LOWER専用の高速 layer-tap ───────── */
     behaviors {
