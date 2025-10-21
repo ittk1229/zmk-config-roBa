@@ -80,10 +80,10 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W               &kp KP_COMMA      &kp KP_DOT          &kp ESC                                            &kp M             &kp R               &kp D             &kp Y               &kp MINUS
-&mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U               &kp LG(N0)      &none          &kp G             &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT P
-&kp Z           &kp X               &kp C             &kp V               &kp B               &sl 3           &none          &kp H             &kp J               &kp K             &kp L               &kp B
-&none           &none               &none             &kp TAB             &lt 2 INT_MUHENKAN  &kp SPACE       &kp BACKSPACE  &lt 1 INT_HENKAN                                                            &kp DEL
+&kp Q           &kp W               &kp KP_COMMA      &kp KP_DOT          &kp ESC                                        &kp M           &kp R               &kp D             &kp Y               &kp P
+&mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U               &kp LG(N0)      &none      &kp G           &mt LEFT_CONTROL T  &mt LEFT_SHIFT N  &mt LEFT_COMMAND S  &mt LEFT_ALT MINUS
+&kp Z           &kp X               &kp C             &kp V               &kp F               &sl 3           &none      &kp H           &kp J               &kp K             &kp L               &kp B
+&none           &none               &none             &kp TAB             &lt 2 INT_MUHENKAN  &kp SPACE       &kp ENTER  &lt 1 CAPSLOCK                                                            &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -100,10 +100,10 @@
 
         LOWER {
             bindings = <
-&trans        &trans        &trans        &trans        &trans                      &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &trans      &trans  &kp NUMBER_6  &kp N7         &kp N8        &kp N9     &kp N0
-&trans        &trans        &trans        &trans        &trans  &trans      &trans  &kp LEFT      &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans        &trans        &trans        &trans        &trans  &trans      &trans  &trans                                                &trans
+&trans        &trans        &trans        &trans        &trans                             &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &trans      &trans         &kp NUMBER_6  &kp N7         &kp N8        &kp N9     &kp N0
+&trans        &trans        &trans        &trans        &trans  &trans      &trans         &kp LEFT      &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans        &trans        &trans        &trans        &trans  &trans      &kp BACKSPACE  &trans                                                &trans
             >;
         };
 
