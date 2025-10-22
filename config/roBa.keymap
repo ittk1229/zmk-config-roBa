@@ -74,10 +74,8 @@
             bindings = <&kp ESC &kp LANGUAGE_2>;
             label = "ESC_FOR_VIMMER";
         };
-    };
 
-    /* ───────── mouse ───────── */
-    macros {
+        /* ───────── mouse ───────── */
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
