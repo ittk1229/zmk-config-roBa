@@ -26,8 +26,6 @@
         13
         18
         19
-        20
-        21
     >;
 
     require-prior-idle-ms = <200>;
@@ -107,6 +105,7 @@
             toggle-mode = "off";
         };
 
+        /* ───────── homerowで修飾キー+クリックを可能に ───────── */
         mtaml: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
@@ -126,7 +125,7 @@
         default_layer {
             bindings = <
 &kp Q              &kp W                  &kp COMMA            &kp DOT                &esc_for_vimmer                                   &kp M                &kp R                  &kp D                &kp Y                  &kp P
-&mtaml LEFT_ALT A  &mtaml LEFT_COMMAND O  &mtaml LEFT_SHIFT E  &mtaml LEFT_CONTROL I  &kp U                &kp LG(N0)        &none      &kp G                &mtaml LEFT_CONTROL T  &mtaml LEFT_SHIFT N  &mtaml LEFT_COMMAND S  &mtaml LEFT_ALT MINUS
+&mtaml LEFT_ALT A  &mtaml LEFT_COMMAND O  &mtaml LEFT_SHIFT E  &mtaml LEFT_CONTROL I  &kp U                &kp LG(N0)        &none      &kp G                &mt LEFT_CONTROL T     &mt LEFT_SHIFT N     &mt LEFT_COMMAND S     &mt LEFT_ALT MINUS
 &kp Z              &kp X                  &kp C                &kp V                  &kp F                &none             &none      &kp H                &kp J                  &kp K                &kp L                  &kp B
 &none              &none                  &none                &lt 5 TAB              &lower 2 LANGUAGE_2  &lt 4 SPACE       &kp ENTER  &raise 1 LANGUAGE_1                                                                     &kp DEL
             >;
@@ -168,7 +167,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
