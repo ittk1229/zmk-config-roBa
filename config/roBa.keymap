@@ -45,18 +45,16 @@
         raise: raise {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <10000>;
-            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
 
         lower: lower {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <10000>;
-            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
     };
