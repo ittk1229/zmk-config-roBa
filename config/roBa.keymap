@@ -16,7 +16,7 @@
 
 &trackball {
     scroll-layers = <5>;
-}
+};
 
 &zip_temp_layer {
     excluded-positions = <
