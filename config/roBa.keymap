@@ -114,7 +114,7 @@
 &none              &none                  &none             &lt 5 TAB           &lt 2 LANGUAGE_2     &lt 4 SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                                        &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>
+            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
         };
 
         /* ───────── Layer 1: RAISE ───────── */
