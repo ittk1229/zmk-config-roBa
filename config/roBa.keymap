@@ -15,7 +15,7 @@
 };
 
 &sensors {
-    triggers-per-rotation = <6>;
+    triggers-per-rotation = <3>;
 };
 
 &trackball {
@@ -23,8 +23,8 @@
 };
 
 &zip_temp_layer {
-    /* キー入力でAML解除 */
-    /* 以下のキーを押してもAMLを解除しない */
+    /* キー入力でML解除 */
+    /* 以下のキーを押してもMLを解除しない */
     excluded-positions = <
         10
         11
@@ -35,12 +35,12 @@
     >;
 };
 
-/* トラックボールを動かしたらAMLを有効化 */
+/* トラックボールを動かしたらMLを有効化、AML */
 &trackball_listener {
     input-processors = <&zip_temp_layer 4 10000>;
 };
 
-/* マウスキーを押したらAMLを有効化 */
+/* マウスキーを押したらMLを有効化 */
 &mkp_input_listener {
     input-processors = <&zip_temp_layer 4 10000>;
 };
@@ -65,6 +65,15 @@
 
     behaviors {};
 
+    combos {
+        compatible = "zmk,combos";
+        combo_right_click {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&mkp MB2>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -72,7 +81,7 @@
         default_layer {
             bindings = <
 &kp Q              &kp W                  &kp COMMA         &kp DOT             &esc_for_vimmer                                   &kp M                &kp R                  &kp D                &kp Y                  &kp P
-&mt LEFT_ALT A     &mt LEFT_COMMAND O    &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U                &kp LG(N0)        &none      &kp G                &mt LEFT_CONTROL T     &mt LEFT_SHIFT N     &mt LEFT_COMMAND S     &mt LEFT_ALT MINUS
+&mt LEFT_ALT A     &mt LEFT_COMMAND O     &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U                &kp LG(N0)        &none      &kp G                &mt LEFT_CONTROL T     &mt LEFT_SHIFT N     &mt LEFT_COMMAND S     &mt LEFT_ALT MINUS
 &kp Z              &kp X                  &kp C             &kp V               &kp F                &none             &none      &kp H                &kp J                  &kp K                &kp L                  &kp B
 &none              &none                  &none             &lt 5 TAB           &lt 2 LANGUAGE_2     &lt 4 SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                                        &kp DEL
             >;
@@ -114,7 +123,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
