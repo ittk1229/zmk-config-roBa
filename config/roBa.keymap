@@ -61,29 +61,21 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                5 6 7 8 9
-                16 17 18 19 20 21
-                28 29 30 31 32 33
-                40 41 42
-            >; // List of keys on the right side of the keyboard
-            hold-trigger-on-release;
         };
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                0 1 2 3 4
-                10 11 12 13 14 15
-                22 23 24 25 26 27
-                34 35 36 37 38 39
-            >; // List of keys on the left side of the keyboard
-            hold-trigger-on-release;
+        };
+        li: layer-ime {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            retro-tap;
         };
     };
 
@@ -105,7 +97,7 @@
 &kp Q        &kp W        &kp COMMA     &kp DOT       &esc_for_vimmer                              &kp M             &kp R         &kp D         &kp Y        &kp P
 &hml LALT A  &hml LCMD O  &hml LSHFT E  &hml LCTRL I  &kp U             &kp LG(N0)      &none      &kp G             &hmr LCTRL T  &hmr LSHFT N  &hmr LCMD S  &hmr LALT MINUS
 &kp Z        &kp X        &kp C         &kp V         &kp F             &none           &none      &kp H             &kp J         &kp K         &kp L        &kp B
-&none        &none        &none         &lt 5 TAB     &lt 2 LANGUAGE_2  &lt 4 SPACE     &kp ENTER  &lt 1 LANGUAGE_1                                           &kp DEL
+&none        &none        &none         &lt 5 TAB     &li 2 LANGUAGE_2  &lt 4 SPACE     &kp ENTER  &li 1 LANGUAGE_1                                           &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
