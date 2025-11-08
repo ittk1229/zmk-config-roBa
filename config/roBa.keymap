@@ -110,10 +110,10 @@
         /* ───────── Layer 0: DEFAULT ───────── */
         default_layer {
             bindings = <
-&kp Q              &kp W                  &kp COMMA         &kp DOT             &esc_for_vimmer                                   &kp M                &kp R                  &kp D                &kp Y                  &kp P
-&mt LEFT_ALT A     &mt LEFT_COMMAND O     &mt LEFT_SHIFT E  &mt LEFT_CONTROL I  &kp U                &kp LG(N0)        &none      &kp G                &mt LEFT_CONTROL T     &mt LEFT_SHIFT N     &mt LEFT_COMMAND S     &mt LEFT_ALT MINUS
-&kp Z              &kp X                  &kp C             &kp V               &kp F                &none             &none      &kp H                &kp J                  &kp K                &kp L                  &kp B
-&none              &none                  &none             &lt 5 TAB           &lt 2 LANGUAGE_2     &lt 4 SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                                                        &kp DEL
+&kp Q        &kp W        &kp COMMA     &kp DOT       &esc_for_vimmer                              &kp M             &kp R         &kp D         &kp Y        &kp P
+&hml LALT A  &hml LCMD O  &hml LSHFT E  &hml LCTRL I  &kp U             &kp LG(N0)      &none      &kp G             &hmr LCTRL T  &hmr LSHFT N  &hmr LCMD S  &hmr LALT MINUS
+&kp Z        &kp X        &kp C         &kp V         &kp F             &none           &none      &kp H             &kp J         &kp K         &kp L        &kp B
+&none        &none        &none         &lt 5 TAB     &lt 2 LANGUAGE_2  &lt SPACE       &kp ENTER  &lt 1 LANGUAGE_1                                           &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
@@ -162,10 +162,10 @@
         /* ───────── Layer 5: BLUETOOTH ───────── */
         BLUETOOTH {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
     };
