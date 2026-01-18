@@ -74,7 +74,7 @@
         li: layer-ime {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <999>;  /* 動作には影響しないが必須パラメータなので定義 */
             bindings = <&mo>, <&kp>;
             retro-tap;
         };
@@ -95,8 +95,8 @@
         /* ───────── Layer 0: DEFAULT ───────── */
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp COMMA     &kp DOT       &esc_for_vimmer                              &kp M             &kp R         &kp D         &kp Y        &kp P
-&hml LALT A  &hml LCMD O  &hml LSHFT E  &hml LCTRL I  &kp U             &kp LG(N0)      &none      &kp G             &hmr LCTRL T  &hmr LSHFT N  &hmr LCMD S  &hmr LALT MINUS
+&kp Q        &kp W        &kp U         &kp COMMA     &kp DOT                                      &kp M             &kp R         &kp D         &kp Y        &kp P
+&hml LALT A  &hml LCMD O  &hml LSHFT E  &hml LCTRL I  &esc_for_vimmer   &kp LG(N0)      &none      &kp G             &hmr LCTRL T  &hmr LSHFT N  &hmr LCMD S  &hmr LALT MINUS
 &kp Z        &kp X        &kp C         &kp V         &kp F             &none           &none      &kp H             &kp J         &kp K         &kp L        &kp B
 &none        &none        &none         &lt 5 TAB     &li 2 LANGUAGE_2  &lt 4 SPACE     &kp ENTER  &li 1 LANGUAGE_1                                           &kp DEL
             >;
@@ -107,10 +107,10 @@
         /* ───────── Layer 1: RAISE ───────── */
         RAISE {
             bindings = <
-&kp GRAVE    &kp SINGLE_QUOTE  &kp LT     &kp GT       &kp COLON                              &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH  &kp TILDE
-&kp AT_SIGN  &kp PIPE          &kp PLUS   &kp EQUAL    &kp DOUBLE_QUOTES  &trans      &trans  &kp CARET      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DLLR   &kp UNDER
-&kp HASH     &kp AMPERSAND     &kp ASTRK  &kp PERCENT  &kp SEMICOLON      &trans      &trans  &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL   &kp QUESTION
-&trans       &trans            &trans     &trans       &trans             &trans      &trans  &trans                                                                 &trans
+&kp GRAVE    &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp LT       &kp GT                             &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH  &kp TILDE
+&kp AT_SIGN  &kp PIPE           &kp PLUS          &kp EQUAL    &kp COLON      &trans      &trans  &kp CARET      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DLLR   &kp UNDER
+&kp HASH     &kp AMPERSAND      &kp ASTRK         &kp PERCENT  &kp SEMICOLON  &trans      &trans  &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL   &kp QUESTION
+&trans       &trans             &trans            &trans       &trans         &trans      &trans  &trans                                                                 &trans
             >;
         };
 
